@@ -25,6 +25,16 @@ jobs:
           pip install robotframework
           pip install robotframework-seleniumlibrary
           pip install robotframework-faker
+
+      - name: Instalar o chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Instalar o chromedriver
+        uses: nanasess/setup-chromedriver@v2
+      - run: |
+          export DISPLAY=:99
+          chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional    
                    
       - name: Run test
         run: robot TestePages/register_teste.robot
