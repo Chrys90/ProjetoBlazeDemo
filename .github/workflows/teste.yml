@@ -26,20 +26,11 @@ jobs:
           pip install robotframework-seleniumlibrary
           pip install robotframework-faker
 
-      - name: Instalar o chrome
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Instalar o chromedriver
+      - name: Configurar Chrome e Chromedriver
         uses: nanasess/setup-chromedriver@v2
-      - run: |
-          export DISPLAY=:99
-          chromedriver --url-base=/wd/hub &
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional   
-          
-      - name: debug chrome
-      - run: |
-          which chromedriver
-          chromedriver --version
+        with:
+          chrome-version: "latest" # Versão mais recente do Chrome
+          chromedriver-cache: true # Cache do Chromedriver para evitar downloads repetidos
                    
       - name: Run test
         run: robot TestePages/register_teste.robot
@@ -49,7 +40,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: report-tests
-          path: '**/TestePages/Report'
+          path: '/TestePages/Report'
+
+      - name: Download Tests Results
+        if: always()
+        uses: actions/download-artifact@v1
+        with:
+          name: results
 
     
 
