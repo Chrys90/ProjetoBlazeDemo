@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-04-12T12:46:52.169969" rpa="false" schemaversion="5">
+<suite id="s1" name="Flights Teste" source="C:\Users\chrys\OneDrive\Área de Trabalho\projeto automação para estudo\BlazeDemo Robot\TestePages\flights_teste.robot">
+<kw name="Abrir Navegador" owner="setup" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:53.061719" level="INFO">Opening browser 'chrome' to base url ''.</msg>
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-12T12:46:53.061719" elapsed="1.284038"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-12T12:46:54.345757" elapsed="0.132510"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-04-12T12:46:54.478267" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:53.061719" elapsed="1.416548"/>
+</kw>
+<test id="s1-t1" name="Cenario 1: Realizar escolha destino da passagem aerea" line="17">
+<kw name="Given que estou na pagina de agencia de viagens" owner="flights_steps">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:54.478267" level="INFO">Opening url 'https://blazedemo.com/index.php'</msg>
+<arg>https://blazedemo.com/index.php</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-04-12T12:46:54.478267" elapsed="1.070061"/>
+</kw>
+<kw name="Validar pagina inicial" owner="flights_page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:55.564932" level="INFO">${texto_atual} = Welcome to the Simple Travel Agency!</msg>
+<var>${texto_atual}</var>
+<arg>${Page_Title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:55.548328" elapsed="0.016604"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${texto_atual}</arg>
+<arg>${texto_pagina_inicial}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-04-12T12:46:55.564932" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:55.548328" elapsed="0.016604"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:55.937205" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-30.png"&gt;&lt;img src="selenium-screenshot-30.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-04-12T12:46:55.564932" elapsed="0.372273"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:54.478267" elapsed="1.458938"/>
+</kw>
+<kw name="When escolher a cidade partida" owner="flights_steps">
+<kw name="Escolher cidade de partida" owner="flights_page">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:55.937205" level="INFO">Selecting options from selection list 'xpath= /html/body/div[3]/form/select[1]' by value São Paolo.</msg>
+<arg>${Select_Departure_City}</arg>
+<arg>São Paolo</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-04-12T12:46:55.937205" elapsed="0.100214"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:55.937205" elapsed="0.100214"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:55.937205" elapsed="0.100214"/>
+</kw>
+<kw name="And escolher cidade destino" owner="flights_steps">
+<kw name="Escolher cidade de destino" owner="flights_page">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:56.039423" level="INFO">Selecting options from selection list 'xpath= /html/body/div[3]/form/select[2]' by value New York.</msg>
+<arg>${Select_Destination_City}</arg>
+<arg>New York</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-04-12T12:46:56.039423" elapsed="0.074707"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:56.039423" elapsed="0.074707"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:56.218796" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-31.png"&gt;&lt;img src="selenium-screenshot-31.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-04-12T12:46:56.114130" elapsed="0.104666"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:56.038420" elapsed="0.180376"/>
+</kw>
+<kw name="And clicar em Find Flights" owner="flights_steps">
+<kw name="Clicar botao Find Flights" owner="flights_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:56.218796" level="INFO">Clicking element 'xpath= //input[@value="Find Flights"]'.</msg>
+<arg>${Find_Flights_Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:56.218796" elapsed="0.470867"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:56.218796" elapsed="0.470867"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:56.218796" elapsed="0.470867"/>
+</kw>
+<kw name="Then a pagina e direcionado para escolha da passagem aerea" owner="flights_steps">
+<kw name="Validar pagina de reserva passagem aerea" owner="flights_page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:56.772222" level="INFO">${texto_atual} = Flights from São Paolo to New York:</msg>
+<var>${texto_atual}</var>
+<arg>${Reservation_Passage_Title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:56.691672" elapsed="0.080550"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${texto_atual}</arg>
+<arg>${texto_passagem_aerea}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-04-12T12:46:56.772222" elapsed="0.001003"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:56.691672" elapsed="0.081553"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:56.932932" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-32.png"&gt;&lt;img src="selenium-screenshot-32.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-04-12T12:46:56.773225" elapsed="0.159707"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:56.690658" elapsed="0.242274"/>
+</kw>
+<tag>Cenario1</tag>
+<status status="PASS" start="2024-04-12T12:46:54.478267" elapsed="2.454665"/>
+</test>
+<test id="s1-t2" name="Cenario 2: Realizar reserva de passagem aerea" line="25">
+<kw name="Given que estou na tela de reserva de passagem aerea" owner="flights_steps">
+<kw name="Validar pagina de reserva passagem aerea" owner="flights_page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:56.974340" level="INFO">${texto_atual} = Flights from São Paolo to New York:</msg>
+<var>${texto_atual}</var>
+<arg>${Reservation_Passage_Title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:56.948566" elapsed="0.025774"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${texto_atual}</arg>
+<arg>${texto_passagem_aerea}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-04-12T12:46:56.975347" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:56.932932" elapsed="0.042415"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:56.932932" elapsed="0.042415"/>
+</kw>
+<kw name="When escolher o voo da empresa United Airlines" owner="flights_steps">
+<kw name="Escolher passagem aerea para reserva" owner="flights_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:56.978341" level="INFO">Clicking element 'xpath= /html/body/div[2]/table/tbody/tr[2]/td[1]/input'.</msg>
+<arg>${Airline_Choose_Button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:56.977352" elapsed="0.521872"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:56.977352" elapsed="0.521872"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:56.976342" elapsed="0.522882"/>
+</kw>
+<kw name="Then a pagina e direcionada para tela de pagamento da passagem" owner="flights_steps">
+<kw name="Validar pagina de pagamento" owner="flights_page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:57.583206" level="INFO">${texto_atual} = Your flight from TLV to SFO has been reserved.</msg>
+<var>${texto_atual}</var>
+<arg>${Reservation_Tittle}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:57.499224" elapsed="0.083982"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${texto_atual}</arg>
+<arg>${texto_confirmacao_reserva}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-04-12T12:46:57.583206" elapsed="0.000949"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:57.499224" elapsed="0.084931"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:57.721503" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-33.png"&gt;&lt;img src="selenium-screenshot-33.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-04-12T12:46:57.584155" elapsed="0.137348"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:57.499224" elapsed="0.223285"/>
+</kw>
+<tag>Cenario2</tag>
+<status status="PASS" start="2024-04-12T12:46:56.932932" elapsed="0.789577"/>
+</test>
+<test id="s1-t3" name="Cenario 3: Realizar compra da passagem aerea" line="31">
+<kw name="Given que estou na pagina de confirmacao de compra" owner="flight_purchase_steps">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:57.724505" level="INFO">Opening url 'https://blazedemo.com/purchase.php'</msg>
+<arg>https://blazedemo.com/purchase.php</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-04-12T12:46:57.724505" elapsed="0.445497"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:58.296767" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.170002" elapsed="0.126765"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:57.724505" elapsed="0.572262"/>
+</kw>
+<kw name="When preencher os campos" owner="flight_purchase_steps">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>vai preencher campos</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.296767" elapsed="0.000000"/>
+</kw>
+<kw name="Preencher campo nome" owner="flight_purchase_page">
+<kw name="Name" owner="FakerLibrary">
+<msg time="2024-04-12T12:46:58.296767" level="INFO">${nome_aleatorio} = Joseph Gentry</msg>
+<var>${nome_aleatorio}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2024-04-12T12:46:58.296767" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:58.296767" level="INFO">Typing text 'Joseph Gentry' into text field 'xpath= //input[@name="inputName"]'.</msg>
+<arg>${Input_Name}</arg>
+<arg>${nome_aleatorio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.296767" elapsed="0.139254"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:58.296767" elapsed="0.140273"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>preencheu o campo nome</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.437471" elapsed="0.000458"/>
+</kw>
+<kw name="Preencher campo endereco" owner="flight_purchase_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:58.438360" level="INFO">Typing text 'teste' into text field 'xpath= //input[@name="address"]'.</msg>
+<arg>${Input_Address}</arg>
+<arg>teste</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.438360" elapsed="0.117823"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:58.438360" elapsed="0.117823"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>preencheu o campo endereco</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.556183" elapsed="0.000999"/>
+</kw>
+<kw name="Preencher campo cidade" owner="flight_purchase_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:58.558184" level="INFO">Clicking element 'id = city'.</msg>
+<arg>${Input_City}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.558184" elapsed="0.063328"/>
+</kw>
+<kw name="City" owner="FakerLibrary">
+<msg time="2024-04-12T12:46:58.622512" level="INFO">${cidade_aleatorio} = Gomezside</msg>
+<var>${cidade_aleatorio}</var>
+<doc>:example: 'Sashabury'</doc>
+<status status="PASS" start="2024-04-12T12:46:58.622512" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:58.623508" level="INFO">Typing text 'Gomezside' into text field 'id = city'.</msg>
+<arg>${Input_City}</arg>
+<arg>${cidade_aleatorio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.623508" elapsed="0.073554"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:58.557182" elapsed="0.140272"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>preencheu o campo cidade</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.697727" elapsed="0.000167"/>
+</kw>
+<kw name="Preencher campo estado" owner="flight_purchase_page">
+<kw name="State" owner="FakerLibrary">
+<msg time="2024-04-12T12:46:58.697894" level="INFO">${estado_aleatorio} = Delaware</msg>
+<var>${estado_aleatorio}</var>
+<status status="PASS" start="2024-04-12T12:46:58.697894" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:58.697894" level="INFO">Typing text 'Delaware' into text field 'id = state'.</msg>
+<arg>${Input_State}</arg>
+<arg>${estado_aleatorio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.697894" elapsed="0.181633"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:58.697894" elapsed="0.181633"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>preencheu o campo estado</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.879527" elapsed="0.000000"/>
+</kw>
+<kw name="Preencher campo cep" owner="flight_purchase_page">
+<kw name="Zipcode" owner="FakerLibrary">
+<msg time="2024-04-12T12:46:58.879527" level="INFO">${cep_aleatorio} = 24210</msg>
+<var>${cep_aleatorio}</var>
+<status status="PASS" start="2024-04-12T12:46:58.879527" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:58.879527" level="INFO">Typing text '24210' into text field 'id = zipCode'.</msg>
+<arg>${Input_Zipcode}</arg>
+<arg>${cep_aleatorio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:58.879527" elapsed="0.209094"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:58.879527" elapsed="0.209094"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>preencheu o campo cep</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.088621" elapsed="0.000997"/>
+</kw>
+<kw name="Selecionar cartao de credito" owner="flight_purchase_page">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:59.091614" level="INFO">Selecting options from selection list 'id = cardType' by value amex.</msg>
+<arg>${Select_CardType}</arg>
+<arg>amex</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.090616" elapsed="0.185797"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:59.090616" elapsed="0.186883"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>seleciou o cartao de credito</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.277499" elapsed="0.000998"/>
+</kw>
+<kw name="Preencher numero do cartao de credito" owner="flight_purchase_page">
+<kw name="Credit Card Number" owner="FakerLibrary">
+<msg time="2024-04-12T12:46:59.280500" level="INFO">${cartao_aleatorio} = 2267054954078987</msg>
+<var>${cartao_aleatorio}</var>
+<doc>Generate a valid credit card number.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.279501" elapsed="0.000999"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:59.281499" level="INFO">Typing text '2267054954078987' into text field 'id = creditCardNumber'.</msg>
+<arg>${Input_CreditCard_Number}</arg>
+<arg>${cartao_aleatorio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.281499" elapsed="0.231699"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:59.279501" elapsed="0.233697"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>preencheu o numero do cartao de credito</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.514194" elapsed="0.000995"/>
+</kw>
+<kw name="Preencher mes do cartao de credito" owner="flight_purchase_page">
+<kw name="Month" owner="FakerLibrary">
+<msg time="2024-04-12T12:46:59.517183" level="INFO">${mes_aleatorio} = 03</msg>
+<var>${mes_aleatorio}</var>
+<status status="PASS" start="2024-04-12T12:46:59.516187" elapsed="0.000996"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:59.518184" level="INFO">Typing text '03' into text field 'id = creditCardMonth'.</msg>
+<arg>${Input_CreditCard_Month}</arg>
+<arg>${mes_aleatorio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.517183" elapsed="0.178431"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:59.515189" elapsed="0.180425"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>preencheu o mes do cartao de credito</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.695614" elapsed="0.000000"/>
+</kw>
+<kw name="Preencher ano do cartao de credito" owner="flight_purchase_page">
+<kw name="Year" owner="FakerLibrary">
+<msg time="2024-04-12T12:46:59.695614" level="INFO">${ano_aleatorio} = 1974</msg>
+<var>${ano_aleatorio}</var>
+<status status="PASS" start="2024-04-12T12:46:59.695614" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:59.709558" level="INFO">Typing text '1974' into text field 'id = creditCardYear'.</msg>
+<arg>${Input_CreditCard_Year}</arg>
+<arg>${ano_aleatorio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.695614" elapsed="0.133634"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:59.695614" elapsed="0.133634"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>preencheu o ano do cartao de credito</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.829248" elapsed="0.000000"/>
+</kw>
+<kw name="Preencher nome do cartao de credito" owner="flight_purchase_page">
+<kw name="Name Male" owner="FakerLibrary">
+<msg time="2024-04-12T12:46:59.829248" level="INFO">${nome_cartao_aleatorio} = Andrew Houston</msg>
+<var>${nome_cartao_aleatorio}</var>
+<status status="PASS" start="2024-04-12T12:46:59.829248" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:46:59.829248" level="INFO">Typing text 'Andrew Houston' into text field 'id = nameOnCard'.</msg>
+<arg>${Input_Name_Card}</arg>
+<arg>${nome_cartao_aleatorio}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.829248" elapsed="0.124118"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:59.829248" elapsed="0.124118"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>preencheu o nome do cartao de credito</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.953366" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:47:00.060420" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-04-12T12:46:59.953366" elapsed="0.121759"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:58.296767" elapsed="1.778358"/>
+</kw>
+<kw name="And clicar em Remember" owner="flight_purchase_steps">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>vai clicar em remember me</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.077404" elapsed="0.000000"/>
+</kw>
+<kw name="Clicar remember me" owner="flight_purchase_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:47:00.077404" level="INFO">Clicking element 'xpath= /html/body/div[2]/form/div[11]/div/label'.</msg>
+<arg>${Click_Remember}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.077404" elapsed="0.064178"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:47:00.077404" elapsed="0.065183"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>clicou em remember me</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.142587" elapsed="0.001435"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:47:00.246690" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-36.png"&gt;&lt;img src="selenium-screenshot-36.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.144022" elapsed="0.102668"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:47:00.077128" elapsed="0.169562"/>
+</kw>
+<kw name="And Clicar em purchase Flight" owner="flight_purchase_steps">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>vai clicar em</arg>
+<arg>purchase flight</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.247689" elapsed="0.001000"/>
+</kw>
+<kw name="Clicar em purchase" owner="flight_purchase_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:47:00.249685" level="INFO">Clicking element 'xpath= //input[@value="Purchase Flight"]'.</msg>
+<arg>${Click_Purchase_Flight}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.249685" elapsed="0.488357"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:47:00.249685" elapsed="0.488357"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>clicou em purchase flight</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.739042" elapsed="0.001999"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:47:00.247689" elapsed="0.493352"/>
+</kw>
+<kw name="Then a compra e realizada com sucesso" owner="flight_purchase_steps">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>vai realizar a confirmacao da compra</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.747047" elapsed="0.001995"/>
+</kw>
+<kw name="Validar confirmacao da compra" owner="flight_purchase_page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:47:00.785048" level="INFO">${texto_atual} = Thank you for your purchase today!</msg>
+<var>${texto_atual}</var>
+<arg>${Purchase_Title}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.752043" elapsed="0.033005"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${texto_atual}</arg>
+<arg>${texto_confirmacao_compra}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.785048" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:47:00.750042" elapsed="0.035006"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>validou a compra</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.786047" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-04-12T12:47:00.890215" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-37.png"&gt;&lt;img src="selenium-screenshot-37.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.786047" elapsed="0.104168"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:47:00.744040" elapsed="0.146175"/>
+</kw>
+<tag>Cenario3</tag>
+<status status="PASS" start="2024-04-12T12:46:57.723508" elapsed="3.166707"/>
+</test>
+<kw name="Fechar Navegador" owner="setup" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-12T12:47:00.890215" elapsed="3.241148"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:47:00.890215" elapsed="3.241148"/>
+</kw>
+<status status="PASS" start="2024-04-12T12:46:52.169969" elapsed="11.962474"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Cenario1</stat>
+<stat pass="1" fail="0" skip="0">Cenario2</stat>
+<stat pass="1" fail="0" skip="0">Cenario3</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Flights Teste">Flights Teste</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
