@@ -25,18 +25,9 @@ jobs:
           pip install robotframework
           pip install robotframework-seleniumlibrary
           pip install robotframework-faker
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
-          sudo apt-get install -y chromedriver    
-
-      
-
+                   
       - name: Run test
         run: robot TestePages/register_teste.robot
-
-      - name: Gerar relatório
-        if: always()
-        run: robot --outputdir  Report
 
       - name: Arquivar relatório
         if: always()
